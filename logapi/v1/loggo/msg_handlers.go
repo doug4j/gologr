@@ -5,7 +5,7 @@ import (
 	"runtime"
 	"strings"
 
-	logapi "github.com/doug4j/OmniFocusTools/go/oft/pkg/logapi/v1"
+	logapi "github.com/doug4j/gologr/logapi/v1"
 )
 
 // Adding options for not using Emoji (UTF-8/16) on windows due to

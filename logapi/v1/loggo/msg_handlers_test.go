@@ -1,10 +1,10 @@
 package loggo
 
 import (
+	"fmt"
 	"testing"
 
-	"github.com/doug4j/OmniFocusTools/go/oft/pkg/common"
-	logapi "github.com/doug4j/OmniFocusTools/go/oft/pkg/logapi/v1"
+	logapi "github.com/doug4j/gologr/logapi/v1"
 )
 
 // IMPORTANT: All of the tests with LineMessageHandler are line number dependent on this source code!
@@ -12,16 +12,17 @@ import (
 
 func TestNewLineMessageHandlerDebug(t *testing.T) {
 	logr := NewDefaultLogging(logapi.InfoLogging)
-	testName := common.GetCallingName()
-	common.StartTest(testName)
-	defer common.EndTest(testName)
+	// testName := common.GetCallingName()
+	// common.StartTest(testName)
+	// defer common.EndTest(testName)
 	handlr := NewLineNumMessageHandler(LineNumMessageHandlerParms{})
 
 	msg := "My Line Handler with Debug"
 	level := logapi.DebugLogging
 	debugMsg := LineMsgCallr(handlr, msg, level)
+	// fmt.Printf("\n\n[%v]\n\n\n", debugMsg)
 	// IMPORTANT: this test depends on the line number above for it's result
-	expected := `DEBUG [github.com/doug4j/OmniFocusTools/go/oft/pkg/logapi/v1/loggo/msg_handlers_test.go:22]
+	expected := `DEBUG [github.com/doug4j/gologr/logapi/v1/loggo/msg_handlers_test.go:22]
 My Line Handler with Debug`
 	if debugMsg != expected {
 		t.Fail()
@@ -31,16 +32,17 @@ My Line Handler with Debug`
 
 func TestNewLineMessageHandlerWarn(t *testing.T) {
 	logr := NewDefaultLogging(logapi.InfoLogging)
-	testName := common.GetCallingName()
-	common.StartTest(testName)
-	defer common.EndTest(testName)
+	// testName := common.GetCallingName()
+	// common.StartTest(testName)
+	// defer common.EndTest(testName)
 	handlr := NewLineNumMessageHandler(LineNumMessageHandlerParms{})
 
 	msg := "My Line Handler with Warn"
 	level := logapi.WarnLogging
 	warnMsg := LineMsgCallr(handlr, msg, level)
+	// fmt.Printf("\n%v\n\n\n", warnMsg)
 	// IMPORTANT: this test depends on the line number above for it's result
-	expected := `WARN [github.com/doug4j/OmniFocusTools/go/oft/pkg/logapi/v1/loggo/msg_handlers_test.go:41]
+	expected := `WARN [github.com/doug4j/gologr/logapi/v1/loggo/msg_handlers_test.go:42]
 My Line Handler with Warn`
 	if warnMsg != expected {
 		t.Fail()
@@ -50,16 +52,17 @@ My Line Handler with Warn`
 
 func TestNewLineMessageHandlerError(t *testing.T) {
 	logr := NewDefaultLogging(logapi.InfoLogging)
-	testName := common.GetCallingName()
-	common.StartTest(testName)
-	defer common.EndTest(testName)
+	// testName := common.GetCallingName()
+	// common.StartTest(testName)
+	// defer common.EndTest(testName)
 	handlr := NewLineNumMessageHandler(LineNumMessageHandlerParms{})
 
 	msg := "My Line Handler with Error"
 	level := logapi.ErrorLogging
 	errorMsg := LineMsgCallr(handlr, msg, level)
+	// fmt.Printf("\n\n\n%v\n\n\n", errorMsg)
 	// IMPORTANT: this test depends on the line number above for it's result
-	expected := `ERROR [github.com/doug4j/OmniFocusTools/go/oft/pkg/logapi/v1/loggo/msg_handlers_test.go:60]
+	expected := `ERROR [github.com/doug4j/gologr/logapi/v1/loggo/msg_handlers_test.go:62]
 My Line Handler with Error`
 	if errorMsg != expected {
 		t.Fail()
@@ -73,16 +76,17 @@ func LineMsgCallr(handlr MessageHandler, msg string, level logapi.Level) string 
 
 func TestNewLineMessageHandlerInfo(t *testing.T) {
 	logr := NewDefaultLogging(logapi.InfoLogging)
-	testName := common.GetCallingName()
-	common.StartTest(testName)
-	defer common.EndTest(testName)
+	// testName := common.GetCallingName()
+	// common.StartTest(testName)
+	// defer common.EndTest(testName)
 	handlr := NewLineNumMessageHandler(LineNumMessageHandlerParms{})
 
 	msg := "My Line Handler with Info"
 	level := logapi.InfoLogging
 	infoMsg := LineMsgCallr(handlr, msg, level)
+	fmt.Printf("\n[%v]\n\n\n", infoMsg)
 	// IMPORTANT: this test depends on the line number above for it's result
-	expected := `INFO [github.com/doug4j/OmniFocusTools/go/oft/pkg/logapi/v1/loggo/msg_handlers_test.go:83]
+	expected := `INFO [github.com/doug4j/gologr/logapi/v1/loggo/msg_handlers_test.go:86]
 My Line Handler with Info`
 	if infoMsg != expected {
 		t.Fail()
@@ -93,9 +97,9 @@ My Line Handler with Info`
 // Note: End of LineMessageHandler and line number dependent testing from this line below.
 func TestEmojiMessageHandlerDebug(t *testing.T) {
 	logr := NewDefaultLogging(logapi.DebugLogging)
-	testName := common.GetCallingName()
-	common.StartTest(testName)
-	defer common.EndTest(testName)
+	// testName := common.GetCallingName()
+	// common.StartTest(testName)
+	// defer common.EndTest(testName)
 	handlr := NewEmojiMessageHandler()
 
 	msg := "My Debug"
@@ -109,9 +113,9 @@ func TestEmojiMessageHandlerDebug(t *testing.T) {
 
 func TestEmojiMessageHandlerInfo(t *testing.T) {
 	logr := NewDefaultLogging(logapi.DebugLogging)
-	testName := common.GetCallingName()
-	common.StartTest(testName)
-	defer common.EndTest(testName)
+	// testName := common.GetCallingName()
+	// common.StartTest(testName)
+	// defer common.EndTest(testName)
 	handlr := NewEmojiMessageHandler()
 
 	msg := "My Info"
@@ -125,9 +129,9 @@ func TestEmojiMessageHandlerInfo(t *testing.T) {
 
 func TestEmojiMessageHandlerWarn(t *testing.T) {
 	logr := NewDefaultLogging(logapi.DebugLogging)
-	testName := common.GetCallingName()
-	common.StartTest(testName)
-	defer common.EndTest(testName)
+	// testName := common.GetCallingName()
+	// common.StartTest(testName)
+	// defer common.EndTest(testName)
 	handlr := NewEmojiMessageHandler()
 
 	msg := "My Warn"
@@ -141,9 +145,9 @@ func TestEmojiMessageHandlerWarn(t *testing.T) {
 
 func TestEmojiMessageHandlerError(t *testing.T) {
 	logr := NewDefaultLogging(logapi.DebugLogging)
-	testName := common.GetCallingName()
-	common.StartTest(testName)
-	defer common.EndTest(testName)
+	// testName := common.GetCallingName()
+	// common.StartTest(testName)
+	// defer common.EndTest(testName)
 	handlr := NewEmojiMessageHandler()
 
 	msg := "My Error"

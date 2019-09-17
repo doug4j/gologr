@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/doug4j/OmniFocusTools/go/oft/pkg/logapi/v2"
+	"github.com/doug4j/gologr/logapi/v2"
 )
 
 func NewSimpleToStringer(value string) logapi.ToString {

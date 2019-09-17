@@ -1,7 +1,7 @@
 package loggo
 
 import (
-	"github.com/doug4j/OmniFocusTools/go/oft/pkg/logapi/v1"
+	logapi "github.com/doug4j/gologr/logapi/v1"
 )
 
 func NewDefaultLogging(logLevel logapi.Level) logapi.Logging {

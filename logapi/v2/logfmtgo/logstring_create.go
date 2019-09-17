@@ -1,6 +1,6 @@
 package logfmtgo
 
-import "github.com/doug4j/OmniFocusTools/go/oft/pkg/logapi/v2"
+import "github.com/doug4j/gologr/logapi/v2"
 
 func NewGoConstLogAwareStringCreating() logapi.LogAwareStringCreating {
 	return logAwareStringCreater{}

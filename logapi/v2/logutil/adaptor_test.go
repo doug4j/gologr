@@ -4,17 +4,16 @@ import (
 	"log"
 	"testing"
 
-	"github.com/doug4j/OmniFocusTools/go/oft/pkg/common"
-	"github.com/doug4j/OmniFocusTools/go/oft/pkg/logapi/v2"
-	"github.com/doug4j/OmniFocusTools/go/oft/pkg/logapi/v2/logfmtgo"
-	"github.com/doug4j/OmniFocusTools/go/oft/pkg/logapi/v2/logfmtutil"
+	"github.com/doug4j/gologr/logapi/v2"
+	"github.com/doug4j/gologr/logapi/v2/logfmtgo"
+	"github.com/doug4j/gologr/logapi/v2/logfmtutil"
 )
 
 func TestAdaptorBasicNoParms(t *testing.T) {
 	// common.LogLevel = common.InfoLogging
-	testName := common.GetCallingName()
-	common.StartTest(testName)
-	defer common.EndTest(testName)
+	// testName := common.GetCallingName()
+	// common.StartTest(testName)
+	// defer common.EndTest(testName)
 
 	logr := NewLogCreating(logapi.DebugLogging, logPrintWriter{})
 	// logr := NewLogCreating(logapi.DebugLogging, logOutWriter{callDepth: 3})
@@ -27,9 +26,9 @@ func TestAdaptorBasicNoParms(t *testing.T) {
 
 func TestAdaptorBasicWithParms(t *testing.T) {
 	// common.LogLevel = common.InfoLogging
-	testName := common.GetCallingName()
-	common.StartTest(testName)
-	defer common.EndTest(testName)
+	// testName := common.GetCallingName()
+	// common.StartTest(testName)
+	// defer common.EndTest(testName)
 
 	// logCtx := AppLogContext {
 	// 	//I18nTag       string
@@ -49,9 +48,9 @@ func TestAdaptorBasicWithParms(t *testing.T) {
 
 func TestAdaptorFancyNoParms(t *testing.T) {
 	// common.LogLevel = common.InfoLogging
-	testName := common.GetCallingName()
-	common.StartTest(testName)
-	defer common.EndTest(testName)
+	// testName := common.GetCallingName()
+	// common.StartTest(testName)
+	// defer common.EndTest(testName)
 
 	logr := NewLogCreating(logapi.DebugLogging, logPrintWriter{})
 	// logr := NewLogCreating(logapi.DebugLogging, logOutWriter{callDepth: 3})

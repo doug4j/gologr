@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"runtime"
 
-	"github.com/doug4j/OmniFocusTools/go/oft/pkg/logapi/v2"
-	"github.com/doug4j/OmniFocusTools/go/oft/pkg/logapi/v2/logfmtutil"
+	"github.com/doug4j/gologr/logapi/v2"
+	"github.com/doug4j/gologr/logapi/v2/logfmtutil"
 )
 
 func NewSrcFmt(format logfmtutil.LogFormat) logapi.LogAwareStringing {

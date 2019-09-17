@@ -1,7 +1,7 @@
 package logutil
 
 import (
-	"github.com/doug4j/OmniFocusTools/go/oft/pkg/logapi/v2"
+	"github.com/doug4j/gologr/logapi/v2"
 )
 
 // NewLogCreating create a line number printing version of logapi.LogCreating

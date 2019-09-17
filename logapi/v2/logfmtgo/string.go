@@ -3,8 +3,8 @@ package logfmtgo
 import (
 	"fmt"
 
-	"github.com/doug4j/OmniFocusTools/go/oft/pkg/logapi/v2"
-	"github.com/doug4j/OmniFocusTools/go/oft/pkg/logapi/v2/logfmtutil"
+	"github.com/doug4j/gologr/logapi/v2"
+	"github.com/doug4j/gologr/logapi/v2/logfmtutil"
 )
 
 func NewSprintfStringer(raw logfmtutil.LogFormat) logapi.ToString {
