@@ -41,6 +41,11 @@ const (
 	FatalLoging
 )
 
+func (l Level) IntP() *uint {
+	myInt := uint(l)
+	return &myInt
+}
+
 func prepMsg(format interface{}, parms []interface{}) string {
 	strFormt := fmt.Sprintf("%v", format)
 	if len(parms) >= 1 {
